@@ -51,7 +51,7 @@ var get_once = function() {
                 console.log("No data available");
                 }
             })
-        }, 2000);
+        }, 4000);
     });
 };
 
@@ -71,7 +71,7 @@ var get_once_2 = function() {
                 console.log("No data available");
                 }
             })
-        }, 2000);
+        }, 4000);
     });
 };
 
@@ -98,6 +98,8 @@ var otp_data = get_opts(tot_datas);
 
       
 const table_avail_count= await get_once();
+
+console.log(table_avail_count);
 
 var reserved2 = table_avail_count["2seatres"];
 var reserved4 = table_avail_count["4seatres"];
