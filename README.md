@@ -2,6 +2,10 @@
 
 Hi there this is a basic restarunt seat booking website, you can access the website [here](https://mrmystery003.github.io/restaurant-plat-de-pays/)
 
+# Working
+
+This website uses plain html,css for front end, and it use js and firsebase database at the backend
+
 ## Here are some preview of the website
 
 <img src = "https://user-images.githubusercontent.com/80098044/233110829-b152d385-c9e2-4f47-84bb-3f352857d5ec.jpg">
