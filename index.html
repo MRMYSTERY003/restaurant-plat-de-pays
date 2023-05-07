@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Plat De Pays</title>
     
     <!-- fontawesome link here -->
-    <link rel="stylesheet" href="fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet" href="fontawesome-free-5.15.3-web\css\all.min.css">
     <script  src="https://code.jquery.com/jquery-3.6.4.min.js"  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="  crossorigin="anonymous"></script>
-    
+    <script src="scrollreveal.js"></script>
     <!-- style link here -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="seat.css">
     
 
 </head>
@@ -50,13 +51,13 @@
                 <div class="home-text-content">
                 <h1>Welcome to Plat de pays</h1>
                 <p>We offer variety of food which are accessed through modern technology without the need to wait for tabel reservation and food ordering</p>
-                <a href="#" id="contact" >Verify the OTP</a>
+                <a href="#" id="contact" >Verify the OTP By scanning the Qr Code</a>
                 </div>
             </div>
 
             <!-- ------------- -->
 <!--        <div >Contact</div> -->
-
+<!-- 
             <div id="contactForm">
             
               <h1>Enter the OTP</h1>
@@ -70,7 +71,7 @@
                 </fieldset>
               </form>
               <p id ='verify-form'></p>
-            </div> 
+            </div>  -->
 
             <!-- --------------->
 
@@ -146,7 +147,7 @@
 
 
 
-
+<!-- 
     <div class="our-menu-food">
         <h1>our Seatings</h1>
 
@@ -199,7 +200,59 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+
+
+    <div class="seates">
+        <h1>our Seatings</h1>
+
+        <div class="upsingle">
+            <li class = 'single-up' id= '11'>1 seater</li>            
+            <li class = 'single-up' id= '12'>1 seater</li>            
+            <li class = 'single-up' id= '13'>1 seater</li>            
+            <li class = 'single-up' id= '14'>1 seater</li>                         
+            <li class = 'single-up' id= '15'>1 seater</li>            
+            <li class = 'single-up' id= '16'>1 seater</li>            
+            <li class = 'single-up' id= '17'>1 seater</li>                        
+            <li class = 'single-up' id= '18'>1 seater</li>            
+            <li class = 'single-up' id= '19'>1 seater</li>            
+            <li class = 'single-up' id= '20'>1 seater</li>
+        </div>
+        <div class="cont-2">
+            <div class="six-seat">
+                <li class = 'single-up' id= '61'>6 seater</li>            
+                <li class = 'single-up' id= '62'>6 seater</li>            
+                <li class = 'single-up' id= '63'>6 seater</li>            
+                <li class = 'single-up' id= '64'>6 seater</li>
+            </div>            
+            <div class="four-seat">
+                <div class="four-1">
+                    <li class = 'single-up' id= '41'>4 seater</li>            
+                    <li class = 'single-up' id= '42'>4 seater</li>            
+                    <li class = 'single-up' id= '43'>4 seater</li>            
+                </div>
+                <div class="four-2">
+                    <li class = 'single-up' id= '44'>4 seater</li>            
+                    <li class = 'single-up' id= '45'>4 seater</li>            
+                    <li class = 'single-up' id= '46'>4 seater</li>            
+                </div>
+            </div>
+        </div>
+        <div class="downsingle">
+            <li class = 'single-up' id= '21'>2 seater</li>
+            <li class = 'single-up' id= '22'>2 seater</li>
+            <li class = 'single-up' id= '23'>2 seater</li>
+            <li class = 'single-up' id= '24'>2 seater</li>
+            <li class = 'single-up' id= '25'>2 seater</li>
+            <li class = 'single-up' id= '26'>2 seater</li>
+            <li class = 'single-up' id= '27'>2 seater</li>
+            <li class = 'single-up' id= '28'>2 seater</li>
+            <li class = 'single-up' id= '29'>2 seater</li>
+            <li class = 'single-up' id= '30'>2 seater</li>
+        </div>
     </div>
+
 
 
     <div class="before">
@@ -215,7 +268,13 @@
                   <br/><br/>
                   <input class = 'form2' type="tel" name="phone" id="phone" placeholder="Phone no" required>
                   <br/><br/>
-                  <input class = 'form2' type="number" name="seat-type" id="seat-type" placeholder="Seats-req" required>
+                  <!-- <input class = 'form2' type="number" name="seat-type" id="seat-type" placeholder="Seats-req" required> -->
+                  <select class="form2" name="seat-type" id="seat-type">
+                    <option value="1">Single Seat</option>
+                    <option value="2">Two Seat</option>
+                    <option value="4">Four Seat</option>
+                    <option value="6">Six Seat</option>
+                  </select>
                   <br/> <br/> <br/>
                   <label for="submit"></label>
                   <input class = 'form2' type="submit" name="submit" id="submit" value="REGISTER">
@@ -249,11 +308,11 @@
 
 <!-- scroll reveal javascript link -->
 
-<script src="https://unpkg.com/scrollreveal"></script>
 
 <!-- javascript link here -->
 
 <script src="script.js"></script>
-<script type="module" src="fbase.js"></script>
+<script src="fbase2.js"  type="module"></script>
+<!-- <script type="module" src="fbase.js"></script> -->
 </body>
 </html>
