@@ -60,6 +60,10 @@ function setcolors(phone, id, otp){
                                 con_btn.style.display = 'none';
                                 can_btn.style.display = 'none';
                                 res.innerHTML = '<p>Thank You, Your Reservation has been cancled!!</p>';
+                                setTimeout(function(){
+                                    window.location.replace("templates/review.html");
+                                    remove(ref(db,"/tabel-booking-available-no/"+ph));
+                                })
 
                               });
                         };
