@@ -65,7 +65,7 @@ function setcolors(phone, id, otp){
                         };
 
                         con_btn.onclick = function(){
-                            window.location.replace("./templates/menu.html?seatid="+seat_id)
+                            window.location.replace("./templates/menu.html?seatid="+seat_id+"&ph="+phone);
                         }
 
 
