@@ -26,7 +26,7 @@ var tableArr = [
   let table = document.createElement('table');
   table.setAttribute("border", "2");
 
-
+var statuss;
 
 table.insertRow();
         
@@ -37,6 +37,10 @@ for (let cell of tableArr) {
     newCell.textContent = cell;
 
 }
+
+
+
+
 
 document.body.appendChild(table);
 
@@ -58,6 +62,8 @@ function setcolors(){
                     if(cell == 'Pending'){
                         console.log('found');
                         newCell.style.color = 'blue'
+                        newCell.style.cursor = 'pointer';
+                        newCell.className = 'status_class';
                         newCell.onclick = function(){
                             newCell.textContent = 'paid';
                             newCell.style.color = 'black'
@@ -73,6 +79,42 @@ function setcolors(){
         onlyOnce: true
       });
 }
+
+setTimeout(function() {
+
+    statuss = document.getElementsByClassName("status_class");
+    for (let i1 = 0; i1 < statuss.length; i1++) {
+        console.log(statuss[i1]);
+        statuss[i1].addEventListener('click',()=>{
+
+            const starCountRef = ref(db, "/orders");
+            onValue(starCountRef, (snapshot) => {
+                const data = snapshot.val();
+                var ids = Object.keys(data);
+                console.log(ids.length);
+                var tttt = [];
+                for(var i = 0; i < ids.length; i++){
+                    var temp = data[ids[i]]
+                    if(temp['status'] == 'Pending'){
+                        console.log(temp['seat-id']);
+                        tttt.push(temp['seat-id']);
+                    }
+                }
+                console.log(tttt);
+                setvalue('/orders/'+tttt[i1]+"/status", "paid")
+
+            },{
+                onlyOnce: true
+            });
+        });
+
+        }
+}, 3000)
+
+
+
+//console.log(statuss);
+
 
 setcolors();
 

@@ -1,5 +1,5 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
-import {getDatabase, ref, set, onValue, get, child } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import {getDatabase, ref, set, onValue, get, child, remove } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDas3E1vVvcE1KZjZL9RqGmtSQgBPCeQYQ",
@@ -21,7 +21,9 @@ var pay_offline  = document.getElementById("pay-offline");
 var order_btn = document.getElementById("place-order");
 var done = document.getElementById("done");
 var gpay = document.getElementById("gpay");
+var review = document.getElementById("review");
 
+review.style.display = 'none';
 done.style.display = 'none';
 gpay.style.display = 'none';
 
@@ -54,7 +56,10 @@ var total_prize = 0;
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('seatid');
+const ph = urlParams.get("ph");
 console.log(id);  
+var seat_info = document.getElementById("seat-info");
+seat_info.innerText = "Your seat Id: "+id;
 
 
 
@@ -1454,12 +1459,21 @@ order_btn.addEventListener('click', ()=>{
 
     console.log("order placed....")
     status.innerHTML = "Order Placed...."
+    gpay.style.display = 'none';
     setTimeout(function() {
         order_btn.style.display = 'none';
         done.style.display = 'block';
+        review.style.display = 'block';
+
+        review.addEventListener('click', ()=>{
+            window.location.replace("review.html");
+            remove(ref(db,"/tabel-booking-available-no/"+ph));
+        })
 
         status.innerHTML = '';
       }, 3000);
 
 })
+
+
 
